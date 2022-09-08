@@ -85,6 +85,13 @@ func (c *Caller) call(action string, p Getter) global.MSG {
 		p1 := p.Get("headers")
 		p2 := int(p.Get("thread_count").Int())
 		return c.bot.CQDownloadFile(p0, p1, p2)
+	case "get_cookies":
+		return c.bot.GetCookies()
+	case "get_cookies_with_domain":
+		p0 := p.Get("domain").String()
+		return c.bot.GetCookiesWithDomain(p0)
+	case "get_csrf_token":
+		return c.bot.GetCSRFToken()
 	case "get_essence_msg_list":
 		p0 := p.Get("group_id").Int()
 		return c.bot.CQGetEssenceMessageList(p0)
@@ -174,6 +181,8 @@ func (c *Caller) call(action string, p Getter) global.MSG {
 	case "get_online_clients":
 		p0 := p.Get("no_cache").Bool()
 		return c.bot.CQGetOnlineClients(p0)
+	case "get_s_key":
+		return c.bot.GetSKey()
 	case "get_status":
 		return c.bot.CQGetStatus()
 	case "get_stranger_info":

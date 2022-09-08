@@ -16,10 +16,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Mrs4s/MiraiGo/binary"
-	"github.com/Mrs4s/MiraiGo/message"
-	"github.com/Mrs4s/MiraiGo/utils"
 	b14 "github.com/fumiama/go-base16384"
+	"github.com/shacha086/MiraiGo/binary"
+	"github.com/shacha086/MiraiGo/message"
+	"github.com/shacha086/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 

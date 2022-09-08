@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Mrs4s/MiraiGo/client"
-	"github.com/Mrs4s/MiraiGo/utils"
 	"github.com/mattn/go-colorable"
 	"github.com/pkg/errors"
+	"github.com/shacha086/MiraiGo/client"
+	"github.com/shacha086/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 

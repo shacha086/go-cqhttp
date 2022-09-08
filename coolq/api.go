@@ -16,10 +16,10 @@ import (
 
 	"github.com/segmentio/asm/base64"
 
-	"github.com/Mrs4s/MiraiGo/binary"
-	"github.com/Mrs4s/MiraiGo/client"
-	"github.com/Mrs4s/MiraiGo/message"
-	"github.com/Mrs4s/MiraiGo/utils"
+	"github.com/shacha086/MiraiGo/binary"
+	"github.com/shacha086/MiraiGo/client"
+	"github.com/shacha086/MiraiGo/message"
+	"github.com/shacha086/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 
@@ -559,6 +559,58 @@ func (bot *CQBot) CQGetGroupFilesByFolderID(groupID int64, folderID string) glob
 	return OK(global.MSG{
 		"files":   files,
 		"folders": folders,
+	})
+}
+
+// GetSKey 获取SKey
+//
+// @route(get_s_key)
+func (bot *CQBot) GetSKey() global.MSG {
+	skey := bot.Client.GetSKey()
+	if skey == "" {
+		return Failed(100, "SKEY_ERROR")
+	}
+	return OK(global.MSG{
+		"skey": skey,
+	})
+}
+
+// GetCookies 获取Cookies
+//
+// @route(get_cookies)
+func (bot *CQBot) GetCookies() global.MSG {
+	cookies := bot.Client.GetCookies()
+	if cookies == "" {
+		return Failed(100, "COOKIES_ERROR")
+	}
+	return OK(global.MSG{
+		"cookies": cookies,
+	})
+}
+
+// GetCookiesWithDomain 根据域名获取Cookies
+//
+// @route(get_cookies_with_domain)
+func (bot *CQBot) GetCookiesWithDomain(domain string) global.MSG {
+	cookies := bot.Client.GetCookiesWithDomain(domain)
+	if cookies == "" {
+		return Failed(100, "COOKIES_ERROR")
+	}
+	return OK(global.MSG{
+		"cookies": cookies,
+	})
+}
+
+// GetCSRFToken 获取csrf令牌
+//
+// @route(get_csrf_token)
+func (bot *CQBot) GetCSRFToken() global.MSG {
+	csrf := bot.Client.GetCSRFToken()
+	if csrf == -1 {
+		return Failed(100, "COOKIES_ERROR")
+	}
+	return OK(global.MSG{
+		"csrf": csrf,
 	})
 }
 

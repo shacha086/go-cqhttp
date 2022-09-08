@@ -107,6 +107,7 @@ func main() {
 	var routers []Router
 	src := flag.String("path", "", "source file")
 	flag.Parse()
+	println(*src)
 	fset := token.NewFileSet()
 	file, err := parser.ParseFile(fset, *src, nil, parser.ParseComments)
 	if err != nil {

@@ -12,8 +12,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/Mrs4s/MiraiGo/utils"
 	b14 "github.com/fumiama/go-base16384"
+	"github.com/shacha086/MiraiGo/utils"
 	log "github.com/sirupsen/logrus"
 
 	"github.com/Mrs4s/go-cqhttp/internal/param"

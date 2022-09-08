@@ -7,8 +7,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Mrs4s/MiraiGo/utils"
 	"github.com/segmentio/asm/base64"
+	"github.com/shacha086/MiraiGo/utils"
 	"github.com/tidwall/gjson"
 )
 

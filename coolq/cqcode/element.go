@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Mrs4s/MiraiGo/binary"
+	"github.com/shacha086/MiraiGo/binary"
 )
 
 // Element single message
